@@ -2,9 +2,6 @@
 #  Configuration file for iFill
 # ------------------------------
 
-# Plugin language
-locale: en
-
 # Set this to false to disable fill message
 fill-message: true
 
