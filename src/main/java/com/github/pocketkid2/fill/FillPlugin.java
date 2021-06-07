@@ -1,7 +1,7 @@
 package com.github.pocketkid2.fill;
 
-import java.util.List;
-
+import com.github.pocketkid2.fill.commands.FillCommand;
+import com.github.pocketkid2.fill.listeners.FillListener;
 import org.bukkit.ChatColor;
 import org.bukkit.block.Block;
 import org.bukkit.inventory.Inventory;
@@ -10,8 +10,7 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import com.github.pocketkid2.fill.commands.FillCommand;
-import com.github.pocketkid2.fill.listeners.FillListener;
+import java.util.List;
 
 public class FillPlugin extends JavaPlugin {
 

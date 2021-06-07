@@ -1,5 +1,7 @@
 package com.github.pocketkid2.fill.listeners;
 
+import com.github.pocketkid2.fill.FillPlugin;
+import com.github.pocketkid2.fill.utils.Messages;
 import org.bukkit.Sound;
 import org.bukkit.event.Event;
 import org.bukkit.event.EventHandler;
@@ -8,12 +10,9 @@ import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.InventoryHolder;
 import org.bukkit.inventory.meta.ItemMeta;
 
-import com.github.pocketkid2.fill.FillPlugin;
-import com.github.pocketkid2.fill.utils.Messages;
-
 public class FillListener implements Listener {
 
-    private FillPlugin plugin;
+    private final FillPlugin plugin;
 
     public FillListener(FillPlugin pl) {
         plugin = pl;
