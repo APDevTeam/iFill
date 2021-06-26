@@ -3,6 +3,7 @@ main: com.github.pocketkid2.fill.FillPlugin
 version: 0.6.0
 author: Pocketkid2
 description: Fill container blocks radpidly!
+api-version: 1.14
 commands:
     fill:
         description: Set, give, or remove a fill wand

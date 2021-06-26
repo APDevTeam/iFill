@@ -1,5 +1,7 @@
 package com.github.pocketkid2.fill.commands;
 
+import com.github.pocketkid2.fill.FillPlugin;
+import com.github.pocketkid2.fill.utils.Messages;
 import org.bukkit.Material;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -8,12 +10,9 @@ import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
-import com.github.pocketkid2.fill.FillPlugin;
-import com.github.pocketkid2.fill.utils.Messages;
-
 public class FillCommand implements CommandExecutor {
 
-	private FillPlugin plugin;
+	private final FillPlugin plugin;
 
 	public FillCommand(FillPlugin pl) {
 		plugin = pl;
@@ -45,14 +44,17 @@ public class FillCommand implements CommandExecutor {
 		return true;
 	}
 
-	@SuppressWarnings("deprecation")
 	private void giveWand(Player player, String[] args) {
 		try {
 			// Create id value from argument
-			int id = Integer.parseInt(args[0]);
+			Material material = Material.matchMaterial(args[0]);
+			if(material == null) {
+				player.sendMessage(Messages.INVALID_MATERIAL + '"' + args[0] + '"');
+				return;
+			}
 
 			// Create object
-			ItemStack stack = new ItemStack(id);
+			ItemStack stack = new ItemStack(material);
 
 			// Create quantity from argument
 			int quantity = stack.getMaxStackSize();
@@ -60,14 +62,8 @@ public class FillCommand implements CommandExecutor {
 				quantity = Integer.parseInt(args[1]);
 			}
 
-			// Create datavalue from argument
-			Byte datavalue = 0;
-			if (args.length > 2) {
-				datavalue = Byte.parseByte(args[2]);
-			}
-
 			// Re-create stack with new values
-			stack = new ItemStack(id, quantity, (short) 0, datavalue);
+			stack = new ItemStack(material, quantity);
 
 			// Give name
 			ItemMeta meta = stack.getItemMeta();
@@ -78,13 +74,12 @@ public class FillCommand implements CommandExecutor {
 			player.getInventory().addItem(stack);
 		} catch (NumberFormatException e) {
 			player.sendMessage(Messages.NUMBER_FORMAT_ERROR);
-			return;
 		}
 	}
 
 	private void toggleItemInHand(Player player) {
 		// Create the object
-		ItemStack stack = player.getItemInHand();
+		ItemStack stack = player.getInventory().getItemInMainHand();
 
 		// Check for item in hand
 		if (stack.getType() == Material.AIR) {
@@ -109,7 +104,7 @@ public class FillCommand implements CommandExecutor {
 		// Put the item meta back in, and put the stack back in the player's
 		// hand
 		stack.setItemMeta(meta);
-		player.setItemInHand(stack);
+		player.getInventory().setItemInMainHand(stack);
 	}
 
 }
