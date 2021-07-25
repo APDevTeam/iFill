@@ -2,7 +2,6 @@ package com.github.pocketkid2.fill;
 
 import java.util.List;
 
-import org.bukkit.ChatColor;
 import org.bukkit.block.Block;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.InventoryHolder;
@@ -12,8 +11,16 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 import com.github.pocketkid2.fill.commands.FillCommand;
 import com.github.pocketkid2.fill.listeners.FillListener;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 public class FillPlugin extends JavaPlugin {
+	private static FillPlugin instance = null;
+
+	@Nullable
+	public static FillPlugin getInstance() {
+		return instance;
+	}
 
 	public boolean MESSAGE;
 	public boolean SOUND;
@@ -21,33 +28,22 @@ public class FillPlugin extends JavaPlugin {
 
 	@Override
 	public void onEnable() {
+		instance = this;
+
 		// Register command
-		getCommand("fill").setExecutor(new FillCommand(this));
+		getCommand("fill").setExecutor(new FillCommand());
 
 		// Register listener
-		getServer().getPluginManager().registerEvents(new FillListener(this), this);
+		getServer().getPluginManager().registerEvents(new FillListener(), this);
 
 		// Save default config and load values
 		saveDefaultConfig();
 		MESSAGE = getConfig().getBoolean("fill-message", true);
 		SOUND = getConfig().getBoolean("fill-sound", true);
 		WORLDS = getConfig().getStringList("worlds");
-
-		// Log status
-		getLogger().info("Done!");
 	}
 
-	@Override
-	public void onDisable() {
-		// Log status
-		getLogger().info("Done!");
-	}
-
-	public String getWandName() {
-		return ChatColor.GREEN + "Fill Wand (Right click to use)";
-	}
-
-	public void fill(Block block, ItemStack stack) {
+	public void fill(@NotNull Block block, @NotNull ItemStack stack) {
 		// Strip wand name
 		ItemMeta meta = stack.getItemMeta();
 		meta.setDisplayName("");
