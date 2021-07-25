@@ -1,2 +1,3 @@
-# iFill [![Build Status](https://jenkins-cccm5.rhcloud.com/job/iFill/badge/icon)](https://jenkins-cccm5.rhcloud.com/job/iFill/)
-A Bukkit/Spigot plugin for minecraft servers
+# iFill
+![iFill](https://github.com/APDevTeam/iFill/actions/workflows/maven.yml/badge.svg?branch=main)
+A Spigot plugin for minecraft servers
