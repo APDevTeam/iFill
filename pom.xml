@@ -6,7 +6,7 @@
 
 	<groupId>com.github.pocketkid2.fill</groupId>
 	<artifactId>iFill</artifactId>
-	<version>1.a.0</version>
+	<version>1.0.0</version>
 	<packaging>jar</packaging>
 
 	<name>iFill</name>
