@@ -21,7 +21,7 @@ public class FillCommand implements CommandExecutor {
 		}
 
 		// Check for permission
-		if (!(sender.hasPermission("ifill.command.fill"))) {
+		if (!(sender.hasPermission("ifill.command"))) {
 			sender.sendMessage(Messages.NO_PERM);
 			return true;
 		}
