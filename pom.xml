@@ -14,7 +14,7 @@
 	<url>https://github.com/APDevTeam/iFill</url>
 
 	<properties>
-		<java.version>1.8</java.version>
+		<java.version>13</java.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 
@@ -76,11 +76,11 @@
 			<version>1.14.4-R0.1-SNAPSHOT</version>
 			<scope>provided</scope>
 		</dependency>
-		<dependency>
-			<groupId>org.jetbrains</groupId>
-			<artifactId>annotations</artifactId>
-			<version>RELEASE</version>
-			<scope>compile</scope>
-		</dependency>
+        <!--Annotations-->
+        <dependency>
+            <groupId>org.jetbrains</groupId>
+            <artifactId>annotations-java5</artifactId>
+            <version>23.1.0</version>
+        </dependency>
 	</dependencies>
 </project>
