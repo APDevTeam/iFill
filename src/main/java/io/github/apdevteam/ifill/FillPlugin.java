@@ -1,4 +1,4 @@
-package com.github.pocketkid2.fill;
+package io.github.apdevteam.ifill;
 
 import java.util.List;
 
@@ -9,8 +9,8 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import com.github.pocketkid2.fill.commands.FillCommand;
-import com.github.pocketkid2.fill.listeners.FillListener;
+import io.github.apdevteam.ifill.commands.FillCommand;
+import io.github.apdevteam.ifill.listeners.FillListener;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 

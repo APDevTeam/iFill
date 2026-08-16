@@ -18,7 +18,7 @@ dependencies {
     compileOnly("net.countercraft:movecraft:+")
 }
 
-group = "com.github.pocketkid2.fill"
+group = "io.github.apdevteam.ifill"
 version = System.getenv("RELEASE_VERSION")?.takeIf { it.isNotBlank() }
     ?: runCatching {
         val sha = ProcessBuilder("git", "rev-parse", "--short", "HEAD")
@@ -48,7 +48,7 @@ tasks.processResources {
 publishing {
     publications {
         create<MavenPublication>("maven") {
-            groupId = "com.github.pocketkid2.fill"
+            groupId = "io.github.apdevteam.ifill"
             artifactId = "iFill"
             version = "${project.version}"
 

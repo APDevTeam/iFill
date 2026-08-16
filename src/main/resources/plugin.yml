@@ -1,5 +1,5 @@
 name: iFill
-main: com.github.pocketkid2.fill.FillPlugin
+main: io.github.apdevteam.ifill.FillPlugin
 version: ${projectVersion}
 api-version: 1.20
 author: Pocketkid2, TylerS1066

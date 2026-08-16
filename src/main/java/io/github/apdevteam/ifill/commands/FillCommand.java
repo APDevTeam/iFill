@@ -1,4 +1,4 @@
-package com.github.pocketkid2.fill.commands;
+package io.github.apdevteam.ifill.commands;
 
 import org.bukkit.Material;
 import org.bukkit.command.Command;
@@ -8,8 +8,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
-import com.github.pocketkid2.fill.FillPlugin;
-import com.github.pocketkid2.fill.utils.Messages;
+import io.github.apdevteam.ifill.utils.Messages;
 
 public class FillCommand implements CommandExecutor {
 	@Override
