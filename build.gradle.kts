@@ -49,7 +49,7 @@ publishing {
     publications {
         create<MavenPublication>("maven") {
             groupId = "io.github.apdevteam.ifill"
-            artifactId = "iFill"
+            artifactId = "ifill"
             version = "${project.version}"
 
             artifact(tasks.jar)
