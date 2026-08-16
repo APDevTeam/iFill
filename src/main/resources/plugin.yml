@@ -1,9 +1,9 @@
 name: iFill
 main: com.github.pocketkid2.fill.FillPlugin
-version: ${project.version}
-api-version: 1.14
+version: ${projectVersion}
+api-version: 1.20
 author: Pocketkid2, TylerS1066
-description: Fill container blocks radpidly!
+description: Fill container blocks rapidly!
 commands:
     fill:
         description: Set, give, or remove a fill wand
